@@ -16,12 +16,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
+      
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
             python-version: 3.13
-
+      
       - name: Install dependencies
         run: |
             pip install -r requirements.txt
@@ -31,7 +31,7 @@ jobs:
       
       - name: Run tests and generate coverage details
         run: pytest --cov=src 
-        
+      
       - name: Coverage comment
         uses: py-cov-action/python-coverage-comment-action@v3
         with:
